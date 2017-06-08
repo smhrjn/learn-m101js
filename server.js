@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 var express = require('express'),
     app = express(),
     engines = require('consolidate'),
@@ -38,6 +40,7 @@ MongoClient.connect('mongodb://localhost:27017/video', function(err, db) {
 				console.error(err.message);
 				console.error(err.stack);
 				res.status(500).render('error_template', { error: err });
+				next();
 		}
 
 		app.get('/:name', function(req, res, next) {
@@ -45,6 +48,7 @@ MongoClient.connect('mongodb://localhost:27017/video', function(err, db) {
 				var getvar1 = req.query.getvar1;
 				var getvar2 = req.query.getvar2;
 				res.render('hello', { name : name, getvar1 : getvar1, getvar2 : getvar2 });
+				next();
 		});
 
     app.use(function(req, res){

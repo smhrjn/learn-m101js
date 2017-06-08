@@ -1,12 +1,23 @@
+<!DOCTYPE html>
+<html>
+
 <head>
-<style>
-body { font-family: 'Helvetica', 'Arial', sans-serif; }
-</style>
+	<title>MongoDB</title>
+	<style>
+		body {
+			font-family: 'Helvetica', 'Arial', sans-serif;
+		}
+
+	</style>
 </head>
 
-<h1>Movies</h1>
-{% for movie in movies %}
-  <li><a href="http://www.imdb.com/title/{{ movie.imdb }}">{{ movie.title }}, {{ movie.year }}</a></li>
-{% else %}
-  <li>No movies found.</li>
-{% endfor %}
+<body>
+	<h1>Movies</h1>
+	{% for movie in movies %}
+	<li><a href="http://www.imdb.com/title/{{ movie.imdb }}">{{ movie.title }}, {{ movie.year }}</a></li>
+	{% else %}
+	<li>No movies found.</li>
+	{% endfor %}
+</body>
+
+</html>

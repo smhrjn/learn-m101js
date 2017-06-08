@@ -1,27 +1,28 @@
-var MongoClient = require('mongodb').MongoClient,
-    assert = require('assert');
+/* eslint-disable no-console */
 
-var url = 'mongodb://localhost:27017/video';
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
-MongoClient.connect(url, function(err, db) {
+const url = 'mongodb://localhost:27017/smhrjn';
 
-    assert.equal(null, err);
-    console.log("Successfully connected to server");
+MongoClient.connect(url, (err, db) => {
+	assert.equal(null, err);
+	console.log('Successfully connected to server');
 
-    // Find some documents in our collection
-    db.collection('movies').find({}).toArray(function(err, docs) {
+	// Find some documents in our collection
+	db.collection('moviesScratch').find({}).toArray((err2, docs) => {
+		if (err2) return console.log(`Error: ${err}`);
 
-        // Print the documents returned
-        docs.forEach(function(doc) {
-            console.log(doc.title);
-        });
+		// Print the documents returned
+		docs.forEach((doc) => {
+			console.log(doc.title);
+		});
 
-        // Close the DB
-        db.close();
-    });
+		// Close the DB
+		db.close();
+		return 0;
+	});
 
-    // Declare success
-    console.log("Called find()");
+  // Declare success
+	console.log('Called find()');
 });
-
-

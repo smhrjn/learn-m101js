@@ -1,5 +1,6 @@
 {
-    "env": {
+    "extends": "airbnb",
+		"env": {
         "browser": true,
         "commonjs": true,
         "es6": true,
@@ -18,6 +19,13 @@
         "no-unreachable": "warn",
         "no-unused-vars": "warn",
         "constructor-super": "warn",
-        "valid-typeof": "warn"
+        "valid-typeof": "warn",
+				"semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+				"func-names": ["error", "never"],
+				"linebreak-style": ["error", "windows"],
+				"indent": ["error", "tab"],
+				"no-tabs": 0,
+				"comma-dangle": "off",
+				"import/no-extraneous-dependencies": "off"
     }
 }

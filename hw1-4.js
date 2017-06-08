@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 var express = require('express'),
     app = express(),
     engines = require('consolidate'),
