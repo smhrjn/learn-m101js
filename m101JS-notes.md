@@ -68,3 +68,19 @@ ___
   > reads JSON
 
 mongo "mongodb://cluster0-shard-00-00-jxeqq.mongodb.net:27017,cluster0-shard-00-01-jxeqq.mongodb.net:27017,cluster0-shard-00-02-jxeqq.mongodb.net:27017/test?replicaSet=Cluster0-shard-0" --authenticationDatabase admin --ssl --username m001-student --password m001-mongodb-basics
+
+mongoimport --db dbName --collection collectionName --jsonArray --file fileName.json
+
+db.tours.insert({
+  "tourName": "fdafaf",
+  "tourLength": 3
+});
+
+db.tours.update({"tourName": "name"}, {
+  $set: {
+    "tourRegion": "region"
+  }
+});
+
+db.tours.remove({"name": "dfa"});
+db.tours.drop();
